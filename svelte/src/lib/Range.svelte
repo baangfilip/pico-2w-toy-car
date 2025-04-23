@@ -3,7 +3,7 @@
     import { fly, fade } from 'svelte/transition'
 
     // Props
-    export let min = -10
+    export let min = 0
     export let max = 10
     export let initialValue = 0
     export let id = null
