@@ -1,5 +1,7 @@
-# pico-2w-with-robo-pico
-Testing pico 2w and robo pico board and other stuff
+# pico-2w-with(out)-robo-pico
+Testing pico 2w and robo pico board and other stuff.
+
+Just for testing couldnt, no time has been spent making it nearly what production code should look like, just experiment.
 
 ## Svelte frontend 
 - for small size
@@ -12,4 +14,7 @@ Testing pico 2w and robo pico board and other stuff
 # Example
 <img alt="car" src="./readme-media/output.gif" width=300/>
 
-The example is of my sons police car (not mine), and it uses only the robo pico board for power pico board with battery, and uses MP6550 as motor controller. It's uses the original power supply for the motor, just through the motor controller. The original functionality works fine.
+<img alt="gui" src="./readme-media/gui.jpeg" width=300>
+Gui on phone after new features
+
+The example is of my sons police car (not mine), and it now uses the battery from the car instead of LiPo (since why Robo pico board takes so much space and I dont have LiPo shim for pico), and uses MP6550 as motor controller. It's uses the original power supply for the motor, just through the motor controller. The original functionality works fine.
