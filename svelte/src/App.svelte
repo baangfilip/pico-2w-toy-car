@@ -1,7 +1,7 @@
 <script lang="ts">
     import Range from './lib/Range.svelte'
     const host = location.host; 
-    let socket = new WebSocket('ws://'+host+'/ws')
+    let socket = new WebSocket('wss://'+host+'/ws')
     let value = $state(0)
     let readyState = $state(0);
     let errorMessage = $state("");
@@ -60,7 +60,7 @@
         3: 'Closed 🚧',
     }
     function turnOnBlinkyLights(){
-        fetch(`http://${host}/lights/blink`)
+        fetch(`https://${host}/lights/blink`)
             .then((response) => {
                 if (!response.ok) {
                     errorMessage = `reload browser error ${response.status}`;
@@ -69,7 +69,7 @@
     }
 
     function turnOnRunningLights(){
-        fetch(`http://${host}/lights/on`)
+        fetch(`https://${host}/lights/on`)
             .then((response) => {
                 if (!response.ok) {
                     errorMessage = `reload browser error ${response.status}`;
@@ -77,7 +77,7 @@
             })
     }
     function turnOffRunningLights(){
-        fetch(`http://${host}/lights/off`)
+        fetch(`https://${host}/lights/off`)
             .then((response) => {
                 if (!response.ok) {
                     errorMessage = `reload browser error ${response.status}`;
@@ -101,11 +101,11 @@
             <br /><br />
         </div>
         <div>
-            <button on:click={turnOnBlinkyLights}>Blink 🚨</button>
+            <button onclick={turnOnBlinkyLights}>Blink 🚨</button>
             <br/>
             <br/>
-            <button on:click={turnOnRunningLights}>Lights on</button>
-            <button on:click={turnOffRunningLights}>Lights off</button>
+            <button onclick={turnOnRunningLights}>Lights on</button>
+            <button onclick={turnOffRunningLights}>Lights off</button>
             <br/>
             <br/>
         </div>

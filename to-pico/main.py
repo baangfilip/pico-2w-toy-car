@@ -1,5 +1,6 @@
 from do_connect import *
 from microdot import Microdot, send_file
+import ssl
 from machine import Pin, PWM, ADC
 from time import sleep
 from microdot.websocket import with_websocket
@@ -7,7 +8,7 @@ import _thread
 
 app = Microdot()
 
-@app.route('/hello')
+@app.route('/')
 async def index(request):
     return send_file('index.html')
 
@@ -41,6 +42,7 @@ async def lightsoff(request):
 @app.route('/lights/blink')
 async def lights(request):
     _thread.start_new_thread(blinklights, ())
+    #blinklights()
     return 'ok', 200
 
 def blinklights():
@@ -91,9 +93,23 @@ def get_vsys():
     vsys = ADC(29)
     conversion_factor = (3.3 / (65535)) * 3
     return vsys.read_u16()*conversion_factor
+
+def start_web_server(): 
+    sslctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+    sslctx.load_cert_chain('cert.der', 'key.der')
+    app.run(port=4443, debug=True, ssl=sslctx)
+
 try: 
     ip=do_connect()
+    for x in range(10):
+        light8.on()
+        light9.on()
+        sleep(0.1)
+        light8.off()
+        light9.off()
+        sleep(0.1)
     if ip is not None:
-        app.run(port=80)
+        print("starting web server")
+        start_web_server()
 except KeyboardInterrupt:
     print("Exception")

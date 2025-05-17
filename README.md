@@ -18,3 +18,13 @@ Just for testing couldnt, no time has been spent making it nearly what productio
 Gui on phone after new features
 
 The example is of my sons police car (not mine), and it now uses the battery from the car instead of LiPo (since why Robo pico board takes so much space and I dont have LiPo shim for pico), and uses MP6550 as motor controller. It's uses the original power supply for the motor, just through the motor controller. The original functionality works fine.
+
+Now a PWA, no need to remember the address to the web page anymore!
+
+## Build
+Build svelte and replace the corresponding files from dist in to-pico folder.
+Notice how some files are in assets folder and therefore needs to be updated in the paths.
+Merge changes, and maybe fix the paths in the config-files from the beginning...
+
+## Redeploy 
+Deploy to-pico to pico, make your own certificates.
