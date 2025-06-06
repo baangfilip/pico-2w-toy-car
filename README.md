@@ -1,5 +1,5 @@
-# pico-2w-with(out)-robo-pico
-Testing pico 2w and robo pico board and other stuff.
+# pico-2w-toy-car
+Testing pico 2w and robo pico board and other stuff. Removed robo-pico because it didnt fit.
 
 Just for testing couldnt, no time has been spent making it nearly what production code should look like, just experiment.
 
