@@ -246,7 +246,7 @@
     }
 
     .range__track {
-        height: 6px;
+        height: 10px;
         background-color: var(--track-bgcolor, #d0d0d0);
         border-radius: 999px;
     }
@@ -258,7 +258,7 @@
             linear-gradient(90deg, #6185ff, #9c65ff)
         );
         width: 0;
-        height: 6px;
+        height: 10px;
         position: absolute;
         border-radius: 999px;
     }
@@ -268,12 +268,12 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        width: 20px;
-        height: 20px;
+        width: 50px;
+        height: 50px;
         background-color: var(--thumb-bgcolor, white);
         cursor: pointer;
         border-radius: 999px;
-        margin-top: -8px;
+        margin-top: -20px;
         transition: box-shadow 100ms;
         user-select: none;
         box-shadow: var(
@@ -293,7 +293,7 @@
     .range__tooltip {
         pointer-events: none;
         position: absolute;
-        top: -33px;
+        top: -48px;
         color: var(--tooltip-text, white);
         width: 38px;
         padding: 4px 0;

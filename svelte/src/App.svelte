@@ -38,7 +38,7 @@
             console.log("close socket, no answer..")
             socket.close();
             readyState = socket.readyState;
-            errorMessage = "reload browser";
+            errorMessage = "reload";
         }, 5000);
         setTimeout(() => {socket.send("ping");}, 2000);
     }
@@ -91,6 +91,9 @@
         <div>
             Socket state: {wsStates[readyState]}<br />
             {errorMessage}
+            {#if errorMessage == "reload browser"}
+            <button onclick={location.reload()}>Reload ♻️</button>
+            {/if}
             <br />
             {#if voltage > 4}
             🔋
